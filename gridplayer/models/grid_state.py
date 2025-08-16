@@ -1,10 +1,12 @@
-from pydantic import BaseModel
+class GridState:
+    def __init__(self):
+        # Existing state fields...
+        self.custom_cell_config = {}
 
-from gridplayer.params.static import GridMode
-from gridplayer.settings import default_field
+    def save_config(self):
+        # Serialize custom_cell_config and other state to a persistent store
+        pass
 
-
-class GridState(BaseModel):
-    mode: GridMode = default_field("playlist/grid_mode")
-    is_fit: bool = default_field("playlist/grid_fit")
-    size: int = default_field("playlist/grid_size")
+    def load_config(self):
+        # Deserialize custom_cell_config and other state from a persistent store
+        pass
